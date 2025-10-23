@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validate</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div>
+        <form action="">
+            <section>
+                <label for="">Name :</label><br>
+                <input type="text" placeholder="Name :" id="name" name="stu_name"><br>
+                <span id="N_error"></span>
+            </section>
+            <section>
+                <label for="">Email :</label><br>
+                <input type="email" placeholder="Email :" id="email" name="stu_email"><br>
+                <span id="E_error"></span>
+            </section>
+            <section>
+                <label for="">Password :</label><br>
+                <input type="Password" placeholder="Password :" id="password" name="stu_password"><br>
+                <span id="P_error"></span>
+            </section>
+            <section>
+                <button type="submit" id="btn">submit</button>
+            </section>
+        </form>
+
+    </div>
+    <section>
+        <table border="1">
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>password</th>
+            </tr>
+            <tr>
+                <td>sdsad</td>
+                <td>sdsad</td>
+                <td>sdasas</td>
+            </tr>
+        </table>
+    </section>
+
+
+    <script>
+        let submit = document.getElementById("btn");
+        let studetns = []
+        submit.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            let name = document.querySelector("#name").value;
+            let email = document.querySelector("#email").value;
+            let password = document.querySelector("#password").value;
+
+            let name_error = document.querySelector("#N_error");
+            let email_error = document.querySelector("#E_error");
+            let password_error = document.querySelector("#P_error");
+
+            name_error.innerHTML = "";
+            email_error.innerHTML = "";
+            password_error.innerHTML = "";
+
+            if (name === "") {
+                name_error.innerHTML = "Name is empty";
+            } else {
+                name_error.innerHTML = "";
+            }
+            if (email === "") {
+                email_error.innerHTML = "email is empty";
+            } else {
+                email_error.innerHTML = "";
+            }
+            if (password === "") {
+                password_error.innerHTML = "password is empty";
+            } else {
+                password_error.innerHTML == ""
+            }
+
+            if (name && email && password) {
+                let obj = {
+                    name,
+                    email,
+                    password
+                }
+                studetns.push(obj)
+                localStorage.setItem("studetns", JSON.stringify(studetns))
+                alert("submitted successfully...")
+                submit.reset()
+
+
+            }
+
+
+
+
+
+
+        })
+isvalid=True
+
+while(isvalid){
+ print("\n 1.insert \n 2.select \n 3.delete \n 4.update \n 5.show chennai \n 6.exit")
+  a=int(input("enter a number:"))
+   if(a==1){
+     insertfun()
+   }else if(a==2){
+     selectAll()
+   } else if(a==3){
+     deleteform()
+   }else if(a==4){
+     update()
+   }else if(a==5){
+     show() 
+   }else{
+     isvalid=False
+   }
+     
+
+}
+   
+    
+
+
+
+    </script>
+
+</body>
+
+</html>
